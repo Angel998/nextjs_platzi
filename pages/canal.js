@@ -1,24 +1,14 @@
 import React, { Component } from "react";
 
 import Layout from "../components/layout/layout";
-// import {
-//   getChannel,
-//   getChannelAudioClips,
-//   getChildChannels
-// } from "../actions/podcastActions";
 
 class Canal extends Component {
   static getInitialProps = props => {
-    // const { id } = query;
-    // const [channel, audios, child_channels] = await Promise.all([
-    //   getChannel(id),
-    //   getChannelAudioClips(id),
-    //   getChildChannels(id)
-    // ]);
+    const { channel, audios, child_channels } = props.req.serverData;
     return {
-      channel: [],
-      audios: [],
-      child_channels: []
+      channel,
+      audios,
+      child_channels
     };
   };
 

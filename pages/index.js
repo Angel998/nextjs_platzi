@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import uuid from "uuid";
 
-// import { getChannels } from "../actions/podcastActions";
-
 import Layout from "../components/layout/layout";
 import ChannelCard from "../components/cards/channelCard";
 
 class Home extends Component {
-  static getInitialProps = ({ req }) => {
-    console.log(req);
-    // const channels = await getChannels();
+  static getInitialProps = props => {
+    const {
+      serverData: { channels }
+    } = props.req;
     return {
-      channels: []
+      channels
     };
   };
 
